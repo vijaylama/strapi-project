@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "songs",
+  "info": {
+    "name": "Song",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "albumName": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "name": {
+      "type": "string"
+    },
+    "artists": {
+      "via": "songs",
+      "collection": "artist"
+    },
+    "addedBy": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "songs"
+    }
+  }
+}
